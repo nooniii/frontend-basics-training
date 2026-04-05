@@ -1,0 +1,221 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<title> profile page </title>
+<style>
+
+ body
+{
+font-family: Geneva,Verdana, sans-serif;
+background: #87a4e2;
+margin: 0;
+padding:20px;
+}
+
+.card{
+background: rgb(107, 108, 182);
+padding: 1.5rem;
+border-radius:6px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+text-align: top-left;
+transition: transform 0.2s ease;}
+
+
+.card:hover { 
+transform: translate(-5px);}
+
+h1 { 
+color:#101111}
+
+p{
+color:#091d31}
+
+
+.about{
+background:white;
+color:white;
+padding: 2rem;
+margin-top:20px;
+width:300px;
+border-radius:6px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.about h2 {
+color:#323b43;
+margin-bottom:0.5rem;
+}
+
+.skillslist {
+    background: white;
+    padding: 1.5rem;
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.skills li {
+    background: #cbd6e1;
+    color: #346698;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    display: inline-block;
+}
+ 
+.personalcontact {
+   background: #8cc0ff;
+    padding: 1.5rem;
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-form {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 4px;
+  background-color:  #f2f2f2;
+  padding: 20px;
+    margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+
+input[type=text], select {
+  min-width: 50%;
+  margin-bottom: 10px;
+  border: 1px solid ;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+textarea {
+  min-width: 45%;
+  height: 150px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #16537e;
+  color: white;
+  padding: 14px;
+  margin: 2px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#skillsList {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+#skillsList.open {
+  max-height: 400px;
+}
+
+@media screen and (max-width: 400px) {
+  label,
+  input[type=text],
+  input[type=submit],
+  select, textarea {
+    flex: 100%;
+    min-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class= "card">
+<img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAdcqOk0LgmCzrhWDlLhF3hwzvuvM9ReBmsA&s" 
+alt="Noura Budi, a networking engineering student, in a professional circular portrait photo with a neutral background" 
+style="width:150px; height:140px; border-radius:50%;">
+<h1> Noura Budi</h1>
+<p> network enginer</p>
+
+
+<section class= "personalcontact">
+<h2> contact info </h2>
+<p>phone number: +966537144243</p>
+<br>
+<a href="mailto: nouraITIntern@alarkkan.net"> email: nouraITIntern@alarkkan.net</a>
+</section>
+</div>
+
+<section class= "about">
+<h2> About Me</h2>
+<p> I'm a networking engineering student who enjoys dapling in diffrent sectors of everything cyper, learning new technologies and exprimenting with the creativity it offers
+ </p>
+</section>
+
+<div class="skillslist">
+  <button id="toggleSkillsBtn" onclick="toggleSkills()">Show Skills</button>
+  <h2>Skills</h2>
+  <ul id="skillsList" class="collapsed">
+    <li>Networking</li>
+    <li>HTML & CSS</li>
+    <li>Python</li>
+    <li>Troubleshooting</li>
+    <li>JavaScript</li>
+  </ul>
+</div>
+
+<div class="contact-form">
+
+ <form action="/action_page.php">
+   <label for="fname"> Name:</label>
+   <input type="text" id="fname" name="fname" placeholder="Your name">
+
+   <label for="email">email:</label>
+   <input type="email" id="email" name="email" placeholder="Your email">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" placeholder="Write something.."></textarea>
+
+<input type="button" value="Submit" onclick="showName()">
+<script>
+
+function showName() {
+    const value = document.getElementById("fname").value;
+    alert("message sent " + value);
+}
+</script>
+ </form>
+</div>
+
+<script>
+function toggleSkills() {
+    const skills = document.getElementById("skillsList");
+    const button = document.getElementById("toggleSkillsBtn");
+
+    skills.classList.toggle("open");
+    if (skills.classList.contains("open")) {
+        button.textContent = "Hide Skills";
+    } else {
+        button.textContent = "Show Skills";
+    }
+}
+</script>
+
+
+</body>
+</html>
