@@ -11,8 +11,16 @@
         <h1>Todo List</h1>
         <form id="todo-form">
             <input type="text" id="todo-input" placeholder="Add a new task..." required>
+            <select id="priority-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
             <button type="submit">Add</button>
         </form>
+        <div class="controls">
+            <button id="sort-btn">Sort by Priority</button>
+        </div>
         <ul id="todo-list"></ul>
     </div>
     <script src="script.js"></script>

@@ -27,7 +27,7 @@ h1 {
 #todo-form {
     display: flex;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 #todo-input {
@@ -36,6 +36,15 @@ h1 {
     border: 1px solid #7983a3;
     border-radius: 4px;
     font-size: 16px;
+}
+
+#priority-select {
+    padding: 10px;
+    border: 1px solid #7983a3;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
 }
 
 #todo-form button {
@@ -51,6 +60,27 @@ h1 {
 
 #todo-form button:hover {
     background: #005fa3;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+#sort-btn {
+    padding: 10px 16px;
+    background: #107c10;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#sort-btn:hover {
+    background: #0b5a0b;
 }
 
 #todo-list {
@@ -103,6 +133,30 @@ h1 {
 
 .delete-btn:hover {
     color: #c0392b;
+}
+
+.priority-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.priority-high {
+    background-color: #ffcccc;
+    color: #c41e3a;
+}
+
+.priority-medium {
+    background-color: #fff4cc;
+    color: #ff9800;
+}
+
+.priority-low {
+    background-color: #ccf0dd;
+    color: #4caf50;
 }
 
 @media (max-width: 500px) {
